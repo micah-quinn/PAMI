@@ -1,6 +1,6 @@
 <?php
 /**
- * ConfbridgeKick action message.
+ * ConfbridgeLock action message.
  *
  * PHP Version 5
  *
@@ -30,7 +30,7 @@
 namespace PAMI\Message\Action;
 
 /**
- * ConfbridgeKick action message.
+ * ConfbridgeLock action message.
  *
  * PHP Version 5
  *
@@ -41,20 +41,18 @@ namespace PAMI\Message\Action;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class ConfbridgeKickAction extends ActionMessage
+class ConfbridgeLockAction extends ActionMessage
 {
     /**
      * Constructor.
      *
-     * @param string $channel Channel to be kicked.
      * @param string $conference Conference on which to act.
      *
      * @return void
      */
-    public function __construct($channel, $conference)
+    public function __construct($conference)
     {
-        parent::__construct('ConfbridgeKick');
-        $this->setKey('Channel', $channel);
+        parent::__construct('ConfbridgeLock');
         $this->setKey('Conference', $conference);
     }
 }
