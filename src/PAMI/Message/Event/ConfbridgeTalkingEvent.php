@@ -1,6 +1,6 @@
 <?php
 /**
- * Event triggered when a channel in a Confbridge begins or ends talking
+ * Event triggered when .. ?
  *
  * PHP Version 5
  *
@@ -29,8 +29,10 @@
  */
 namespace PAMI\Message\Event;
 
+use PAMI\Message\Event\EventMessage;
+
 /**
- * Event triggered when a channel in a Confbridge begins or ends talking
+ * Event triggered when .. ?
  *
  * PHP Version 5
  *
@@ -54,6 +56,26 @@ class ConfbridgeTalkingEvent extends EventMessage
     }
 
     /**
+     * Returns key: 'Channel'.
+     *
+     * @return string
+     */
+    public function getChannel()
+    {
+        return $this->getKey('Channel');
+    }
+
+    /**
+     * Returns key: 'Uniqueid'.
+     *
+     * @return string
+     */
+    public function getUniqueid()
+    {
+        return $this->getKey('Uniqueid');
+    }
+
+    /**
      * Returns key: 'Conference'.
      *
      * @return string
@@ -61,6 +83,16 @@ class ConfbridgeTalkingEvent extends EventMessage
     public function getConference()
     {
         return $this->getKey('Conference');
+    }
+
+    /**
+     * Returns key: 'TalkingStatus'.
+     *
+     * @return string
+     */
+    public function getTalkingStatus()
+    {
+        return $this->getKey('TalkingStatus');
     }
 
     /**
@@ -121,16 +153,6 @@ class ConfbridgeTalkingEvent extends EventMessage
     public function getBridgeNumChannels()
     {
         return $this->getKey('BridgeNumChannels');
-    }
-
-    /**
-     * Returns key: 'Channel'.
-     *
-     * @return string
-     */
-    public function getChannel()
-    {
-        return $this->getKey('Channel');
     }
 
     /**
@@ -234,16 +256,6 @@ class ConfbridgeTalkingEvent extends EventMessage
     }
 
     /**
-     * Returns key: 'Uniqueid'.
-     *
-     * @return string
-     */
-    public function getUniqueid()
-    {
-        return $this->getKey('Uniqueid');
-    }
-
-    /**
      * Returns key: 'Linkedid'.
      *
      * @return string
@@ -251,16 +263,6 @@ class ConfbridgeTalkingEvent extends EventMessage
     public function getLinkedid()
     {
         return $this->getKey('Linkedid');
-    }
-
-    /**
-     * Returns key: 'TalkingStatus'.
-     *
-     * @return string
-     */
-    public function getTalkingStatus()
-    {
-        return $this->getKey('TalkingStatus');
     }
 
     /**

@@ -54,5 +54,6 @@ class GetConfigJSONAction extends ActionMessage
     {
         parent::__construct('GetConfigJSON');
         $this->setKey('Filename', $filename);
+        $this->setResponseHandler("Complex");
     }
 }

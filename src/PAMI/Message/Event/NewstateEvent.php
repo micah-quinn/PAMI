@@ -136,4 +136,24 @@ class NewstateEvent extends EventMessage
     {
         return $this->getKey('ConnectedLineName');
     }
+
+    /**
+     * Returns key: 'LinkedId'.
+     *
+     * @return string
+     */
+    public function getLinkedId()
+    {
+        return $this->getKey('LinkedId');
+    }
+
+    /**
+     * Returns key: 'Exten'.
+     *
+     * @return string
+     */
+    public function getExten()
+    {
+        return $this->getKey('Exten');
+    }
 }

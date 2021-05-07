@@ -1,6 +1,6 @@
 <?php
 /**
- * Event triggered when a confbridge is destroyed.
+ * Event triggered when .. ?
  *
  * PHP Version 5
  *
@@ -29,8 +29,10 @@
  */
 namespace PAMI\Message\Event;
 
+use PAMI\Message\Event\EventMessage;
+
 /**
- * Event triggered when a confbridge is destroyed.
+ * Event triggered when .. ?
  *
  * PHP Version 5
  *

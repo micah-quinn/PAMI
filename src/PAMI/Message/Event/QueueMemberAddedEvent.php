@@ -102,7 +102,7 @@ class QueueMemberAddedEvent extends EventMessage
      */
     public function getPenalty()
     {
-        return $this->getKey('Penalty');
+        return intval($this->getKey('Penalty'));
     }
 
     /**
@@ -112,7 +112,7 @@ class QueueMemberAddedEvent extends EventMessage
      */
     public function getCallsTaken()
     {
-        return $this->getKey('CallsTaken');
+        return intval($this->getKey('CallsTaken'));
     }
 
     /**
@@ -122,7 +122,7 @@ class QueueMemberAddedEvent extends EventMessage
      */
     public function getLastCall()
     {
-        return $this->getKey('LastCall');
+        return intval($this->getKey('LastCall'));
     }
 
     /**

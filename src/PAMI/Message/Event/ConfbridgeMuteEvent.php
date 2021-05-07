@@ -1,6 +1,6 @@
 <?php
 /**
- * Event triggered when a channel is muted in a confbridge.
+ * Event triggered when .. ?
  *
  * PHP Version 5
  *
@@ -29,8 +29,10 @@
  */
 namespace PAMI\Message\Event;
 
+use PAMI\Message\Event\EventMessage;
+
 /**
- * Event triggered when a channel is muted in a confbridge.
+ * Event triggered when .. ?
  *
  * PHP Version 5
  *
@@ -54,6 +56,26 @@ class ConfbridgeMuteEvent extends EventMessage
     }
 
     /**
+     * Returns key: 'Channel'.
+     *
+     * @return string
+     */
+    public function getChannel()
+    {
+        return $this->getKey('Channel');
+    }
+
+    /**
+     * Returns key: 'Uniqueid'.
+     *
+     * @return string
+     */
+    public function getUniqueid()
+    {
+        return $this->getKey('Uniqueid');
+    }
+
+    /**
      * Returns key: 'Conference'.
      *
      * @return string
@@ -61,6 +83,26 @@ class ConfbridgeMuteEvent extends EventMessage
     public function getConference()
     {
         return $this->getKey('Conference');
+    }
+
+    /**
+     * Returns key: 'CallerIDnum'.
+     *
+     * @return string
+     */
+    public function getCallerIDnum()
+    {
+        return $this->getKey('CallerIDnum');
+    }
+
+    /**
+     * Returns key: 'CallerIDname'.
+     *
+     * @return string
+     */
+    public function getCallerIDname()
+    {
+        return $this->getKey('CallerIDname');
     }
 
     /**
@@ -124,16 +166,6 @@ class ConfbridgeMuteEvent extends EventMessage
     }
 
     /**
-     * Returns key: 'Channel'.
-     *
-     * @return string
-     */
-    public function getChannel()
-    {
-        return $this->getKey('Channel');
-    }
-
-    /**
      * Returns key: 'ChannelState'.
      *
      * @return string
@@ -151,26 +183,6 @@ class ConfbridgeMuteEvent extends EventMessage
     public function getChannelStateDesc()
     {
         return $this->getKey('ChannelStateDesc');
-    }
-
-    /**
-     * Returns key: 'CallerIDNum'.
-     *
-     * @return string
-     */
-    public function getCallerIDNum()
-    {
-        return $this->getKey('CallerIDNum');
-    }
-
-    /**
-     * Returns key: 'CallerIDName'.
-     *
-     * @return string
-     */
-    public function getCallerIDName()
-    {
-        return $this->getKey('CallerIDName');
     }
 
     /**
@@ -231,16 +243,6 @@ class ConfbridgeMuteEvent extends EventMessage
     public function getPriority()
     {
         return $this->getKey('Priority');
-    }
-
-    /**
-     * Returns key: 'Uniqueid'.
-     *
-     * @return string
-     */
-    public function getUniqueid()
-    {
-        return $this->getKey('Uniqueid');
     }
 
     /**

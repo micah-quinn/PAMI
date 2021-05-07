@@ -99,7 +99,7 @@ interface IClient
      *
      * @see ClientImpl::send()
      * @throws \PAMI\Client\Exception\ClientException
-     * @return \PAMI\Message\Response\ResponseMessage
+     * @return \PAMI\Message\Response\Response
      */
     public function send(OutgoingMessage $message);
 

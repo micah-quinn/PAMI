@@ -1,13 +1,13 @@
 <?php
 /**
- * ConfbridgeList action message.
+ * Show sip peers.
  *
  * PHP Version 5
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
- * @author     Matt Styles <mstyleshk@gmail.com>
+ * @author     Marcelo Gornstein <marcelog@gmail.com>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -30,14 +30,14 @@
 namespace PAMI\Message\Action;
 
 /**
- * Lists all users in a particular ConfBridge conference.
+ * Show sip peers.
  *
  * PHP Version 5
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
- * @author     Matt Styles <mstyleshk@gmail.com>
+ * @author     Marcelo Gornstein <marcelog@gmail.com>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -45,8 +45,6 @@ class ConfbridgeListAction extends ActionMessage
 {
     /**
      * Constructor.
-     *
-     * @param string $conference Conference on which to act.
      *
      * @return void
      */

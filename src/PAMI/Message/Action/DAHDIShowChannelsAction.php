@@ -1,6 +1,10 @@
 <?php
 /**
- * DAHDIShowChannels action message.
+ * DAHDIShowChannels Action
+ *
+ *
+ *
+ * Note: Auto Generated using xsltproc
  *
  * PHP Version 5
  *
@@ -8,7 +12,8 @@
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
- * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
+ * @author     Diederik de Groot <ddegroot@gmail.com>
+ * @license    http://github.com/chan-sccp/PAMI/LICENSE
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
  *
@@ -30,16 +35,9 @@
 namespace PAMI\Message\Action;
 
 /**
- * DAHDIShowChannels action message.
+ * DAHDIShowChannels Action
  *
- * PHP Version 5
- *
- * @category   Pami
- * @package    Message
- * @subpackage Action
- * @author     Marcelo Gornstein <marcelog@gmail.com>
- * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
- * @link       http://marcelog.github.com/PAMI/
+ * Note: Auto Generated using xsltproc
  */
 class DAHDIShowChannelsAction extends ActionMessage
 {
@@ -51,5 +49,18 @@ class DAHDIShowChannelsAction extends ActionMessage
     public function __construct()
     {
         parent::__construct('DAHDIShowChannels');
+    }
+
+    /**
+     * set DAHDIChannel
+     *
+     * @param string $dahdichannel
+     *        Specify the specific channel number to show. Show all channels if zero or not present.
+     *
+     * @return void
+     */
+    public function setDAHDIChannel($dahdichannel)
+    {
+        $this->setKey('DAHDIChannel', $dahdichannel);
     }
 }

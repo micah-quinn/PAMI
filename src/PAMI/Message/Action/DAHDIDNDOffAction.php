@@ -1,6 +1,10 @@
 <?php
 /**
- * DAHDIDNDoff action message.
+ * DAHDIDNDoff Action
+ *
+ *
+ *
+ * Note: Auto Generated using xsltproc
  *
  * PHP Version 5
  *
@@ -8,6 +12,7 @@
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Diederik de Groot <ddegroot@gmail.com>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -30,29 +35,23 @@
 namespace PAMI\Message\Action;
 
 /**
- * DAHDIDNDoff action message.
+ * DAHDIDNDoff Action
  *
- * PHP Version 5
- *
- * @category   Pami
- * @package    Message
- * @subpackage Action
- * @author     Marcelo Gornstein <marcelog@gmail.com>
- * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
- * @link       http://marcelog.github.com/PAMI/
+ * Note: Auto Generated using xsltproc
  */
-class DAHDIDNDOffAction extends ActionMessage
+class DAHDIDNDoffAction extends ActionMessage
 {
     /**
      * Constructor.
      *
-     * @param string $channel Target dahdi Channel.
+     * @param string $dahdichannel
+     *        DAHDI channel number to set DND off.
      *
      * @return void
      */
-    public function __construct($channel)
+    public function __construct($dahdichannel)
     {
-        parent::__construct('DAHDIDNDOff');
-        $this->setKey('DAHDIChannel', $channel);
+        parent::__construct('DAHDIDNDoff');
+        $this->setKey('DAHDIChannel', $dahdichannel);
     }
 }

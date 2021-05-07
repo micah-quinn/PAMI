@@ -1,13 +1,13 @@
 <?php
 /**
- * Event triggered for the end of the list when an action ConfbridgeList is issued.
+ * Event triggered for the end of the list when an action ConfbridgeListRooms is issued.
  *
  * PHP Version 5
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
- * @author     Micah Quinn (micah.quinn@sipiq.com)
+ * @author     Matt Styles <mstyleshk@gmail.com>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,14 +32,14 @@ namespace PAMI\Message\Event;
 use PAMI\Message\Event\EventMessage;
 
 /**
- * Event triggered for the end of the list when an action ConfbridgeList is issued.
+ * Event triggered for the end of the list when an action ConfbridgeListRooms is issued.
  *
  * PHP Version 5
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
- * @author     Micah Quinn (micah.quinn@sipiq.com)
+ * @author     Matt Styles <mstyleshk@gmail.com>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */

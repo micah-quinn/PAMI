@@ -7,7 +7,7 @@
  * @category   Pami
  * @package    Message
  * @subpackage Action
- * @author     Joseph Lenzi <joseph.lenzi@sipiq.com>
+ * @author     Matt Styles <mstyleshk@gmail.com>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -37,7 +37,7 @@ namespace PAMI\Message\Action;
  * @category   Pami
  * @package    Message
  * @subpackage Action
- * @author     Joseph Lenzi <joseph.lenzi@sipiq.com>
+ * @author     Matt Styles <mstyleshk@gmail.com>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */

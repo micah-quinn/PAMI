@@ -7,7 +7,7 @@
  * @category   Pami
  * @package    Message
  * @subpackage Action
- * @author     Joseph Lenzi <joseph.lenzi@sipiq.com>
+ * @author     Matt Styles <mstyleshk@gmail.com>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -37,7 +37,7 @@ namespace PAMI\Message\Action;
  * @category   Pami
  * @package    Message
  * @subpackage Action
- * @author     Joseph Lenzi <joseph.lenzi@sipiq.com>
+ * @author     Matt Styles <mstyleshk@gmail.com>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -46,15 +46,15 @@ class ConfbridgeKickAction extends ActionMessage
     /**
      * Constructor.
      *
-     * @param string $channel Channel to be kicked.
+     * @param string $channel Channel to be muted.
      * @param string $conference Conference on which to act.
      *
      * @return void
      */
-    public function __construct($channel, $conference)
+    public function __construct($conference, $channel)
     {
         parent::__construct('ConfbridgeKick');
-        $this->setKey('Channel', $channel);
         $this->setKey('Conference', $conference);
+        $this->setKey('Channel', $channel);
     }
 }

@@ -10,3 +10,18 @@ if (!defined('TMPDIR')) {
 require_once implode(DIRECTORY_SEPARATOR, array(
   __DIR__, "..", "..", "vendor", "autoload.php"
 ));
+
+require_once implode(DIRECTORY_SEPARATOR, array(
+  __DIR__, "mockSetup.php"
+));
+
+/* Set phpunit defaults */
+//define("PHPUnit_Username", "Fuuu");
+// or
+//$phpunitConfig = new Array(
+//    $this->_properties = array();
+//)
+
+/* Global Settings for unit Testing */
+global $mockTime;
+$mockTime = true;

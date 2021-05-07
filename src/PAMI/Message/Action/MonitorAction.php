@@ -63,8 +63,30 @@ class MonitorAction extends ActionMessage
     {
         parent::__construct('Monitor');
         $this->setKey('Channel', $channel);
-        $this->setKey('Mix', 'true');
-        $this->setKey('Format', 'wav');
         $this->setKey('File', $filename);
+    }
+    
+    /**
+     * Sets Format
+     *
+     * @param string $format  Format to be used during recording
+     *
+     * @return void
+     */
+    public function setFormat($format)
+    {
+        $this->setKey('Format', $format);
+    }
+
+    /**
+     * Sets mixing true/false
+     *
+     * @param boolean $monitor  Switch mixing mode on/off.
+     *
+     * @return void
+     */
+    public function setMix($mix)
+    {
+        $this->setKey('Mix', $mix ? 'true' : 'false');
     }
 }

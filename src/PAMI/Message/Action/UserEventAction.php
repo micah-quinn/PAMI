@@ -1,18 +1,18 @@
 <?php
 /**
- * UserEvent action message.
+ * UserEventAction action message.
  *
  * PHP Version 5
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
- * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Niklas Larsson <niklas@tese.se>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
  *
- * Copyright 2011 Marcelo Gornstein <marcelog@gmail.com>
+ * Copyright 2015 Niklas Larsson <niklas@tese.se>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,14 +30,14 @@
 namespace PAMI\Message\Action;
 
 /**
- * UserEvent action message.
+ * UserEventAction action message.
  *
  * PHP Version 5
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
- * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Niklas Larsson <niklas@tese.se>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -46,15 +46,19 @@ class UserEventAction extends ActionMessage
     /**
      * Constructor.
      *
-     * @param string $userEvent UserEvent
-     * @param array $headers
+     * @param $userevent Event
+     * @param $valuesArr Array
+     * @return void
      */
-    public function __construct($userEvent, array $headers = [])
+    public function __construct($userevent, $valuesArr = null)
     {
         parent::__construct('UserEvent');
-        $this->setKey('UserEvent', $userEvent);
-        foreach ($headers as $key => $value) {
-            $this->setKey((string)$key, (string)$value);
+        $this->setKey('UserEvent', $userevent);
+
+        if (is_array($valuesArr) && $valuesArr) {
+            foreach ($valuesArr as $key => $value) {
+                $this->setKey($key, $value);
+            }
         }
     }
 }

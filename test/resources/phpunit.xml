@@ -8,17 +8,25 @@
     convertNoticesToExceptions="true"
     convertWarningsToExceptions="true"
     forceCoversAnnotation="false"
-    mapTestClassNameToCoveredClassName="false"
     processIsolation="false"
     stopOnError="true"
     stopOnFailure="true"
+    stopOnWarning="true"
     stopOnIncomplete="true"
     stopOnSkipped="true"
     stopOnRisky="true"
     timeoutForSmallTests="1"
     timeoutForMediumTests="10"
     timeoutForLargeTests="60"
-    verbose="true">
+    verbose="true"
+    >
+    <!--
+    stopOnWarning="false"
+    stopOnSkipped="true"
+    stopOnRisky="false"
+    strictCoverage="false"
+    mapTestClassNameToCoveredClassName="false"
+    -->
 
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
@@ -29,6 +37,7 @@
             </exclude>
         </whitelist>
     </filter>
+    
     <testsuites>
         <testsuite name="Client">
           <directory suffix=".php">../client</directory>
@@ -39,9 +48,22 @@
         <testsuite name="Events">
             <directory suffix=".php">../events</directory>
         </testsuite>
+        <testsuite name="Factories">
+            <directory suffix=".php">../factories</directory>
+        </testsuite>
+        <testsuite name="SCCP_Actions">
+            <directory suffix=".php">../sccp_actions</directory>
+        </testsuite>
+        <testsuite name="SCCP_Events">
+            <directory suffix=".php">../sccp_events</directory>
+        </testsuite>
+        <testsuite name="XSLT_Actions">
+            <directory suffix=".php">../xslt</directory>
+        </testsuite>
     </testsuites>
     <logging>
         <log type="coverage-html" target="../../build/coverage-html"/>
         <log type="coverage-clover" target="../../build/logs/clover.xml"/>
+        <log type="coverage-xml" target="../../build/coverage-xml"/>
     </logging>
 </phpunit>

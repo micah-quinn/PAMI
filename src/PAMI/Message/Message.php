@@ -79,11 +79,11 @@ abstract class Message
     protected $createdDate;
 
     /**
-     * Serialize function.
+     * Serialize helper function.
      *
      * @return string[]
      */
-    public function __sleep()
+    protected function __sleep()
     {
         return array('lines', 'variables', 'keys', 'createdDate');
     }
@@ -127,6 +127,51 @@ abstract class Message
     }
 
     /**
+     * Sanitize incoming value
+     *
+     * @param string $value Key value.
+     *
+     * @return typed and sanitized value
+     */
+    protected function sanitizeInput($value)
+    {
+        if (!isset($value) || $value === null || strlen($value) == 0) {
+            return null;
+        } elseif (is_numeric($value)) {
+            // index access is safe as is_numeric('') === false
+            if ($value[0] === '0' || $value[0] === '+') {
+                // Return as string if there's a leading zero or plus sign to avoid losing information
+                return $value;
+            }
+            if (filter_var($value, FILTER_VALIDATE_INT, FILTER_FLAG_ALLOW_HEX | FILTER_FLAG_ALLOW_OCTAL)) {
+                return intval($value, 0);
+            }
+            if (filter_var($value, FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION | FILTER_FLAG_ALLOW_THOUSAND | FILTER_FLAG_ALLOW_SCIENTIFIC)) {
+                return (float)$value;
+            }
+            return (double)$value;
+        } elseif (is_string($value)) {
+            //if (filter_var($value, FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE))
+            //    return (boolean)$value;
+            if (strcasecmp($value, 'on') === 0 || strcasecmp($value, 'true') === 0 || strcasecmp($value, 'yes') === 0) {
+                return (boolean)true;
+            }
+            if (strcasecmp($value, 'off') === 0 || strcasecmp($value, 'false') === 0 || strcasecmp($value, 'no') === 0) {
+                return (boolean)false;
+            }
+            if (filter_var($value, FILTER_SANITIZE_STRING, FILTER_NULL_ON_FAILURE)) {
+                return (string)$value;
+            }
+            if (filter_var($value, FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_NULL_ON_FAILURE)) {
+                return (string)htmlspecialchars($value, ENT_QUOTES);
+            }
+            throw new PAMIException("Incoming String is not sanitary. Skipping: '" . $value . "'\n");
+        } else {
+            throw new PAMIException("Don't know how to convert: '" . $value . "'\n");
+        }
+    }
+
+    /**
      * Adds a variable to this message.
      *
      * @param string $key   Key name (i.e: Action).
@@ -138,6 +183,24 @@ abstract class Message
     {
         $key = strtolower((string)$key);
         $this->keys[$key] = (string)$value;
+    }
+
+    /**
+     * Adds a variable to this message after sanitizing it first.
+     *
+     * @param string $key   Key name (i.e: Action).
+     * @param string $value Key value.
+     *
+     * @return void
+     */
+    protected function setSanitizedKey($key, $value)
+    {
+        $key = strtolower((string)$key);
+        if ($key === 'actionid' or $key === 'uniqueid' or $key === 'linkedid') {
+            $this->keys[$key] = $value;
+        } else {
+            $this->keys[$key] = $this->sanitizeInput($value);
+        }
     }
 
     /**
@@ -153,7 +216,24 @@ abstract class Message
         if (!isset($this->keys[$key])) {
             return null;
         }
-        return (string)$this->keys[$key];
+        //return (string)$this->keys[$key];
+        return $this->keys[$key];
+    }
+
+    /**
+     * Returns a key by name.
+     *
+     * @param string $key Key name (i.e: Action).
+     *
+     * @return string
+     */
+    public function getBoolKey($key)
+    {
+        $key = strtolower($key);
+        if (!isset($this->keys[$key])) {
+            return null;
+        }
+        return (boolean) $this->keys[$key];
     }
 
     /**
@@ -179,6 +259,7 @@ abstract class Message
     /**
      * Returns the end of message token appended to the end of a given message.
      *
+     * @param $message
      * @return string
      */
     protected function finishMessage($message)

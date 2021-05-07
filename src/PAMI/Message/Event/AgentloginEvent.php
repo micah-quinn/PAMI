@@ -1,6 +1,9 @@
 <?php
 /**
- * Event triggered when an agent logs in.
+ * AgentLogin Event
+ *
+ *
+ * Note: Auto Generated using xsltproc
  *
  * PHP Version 5
  *
@@ -8,6 +11,7 @@
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Diederik de Groot <ddegroot@gmail.com>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,31 +36,194 @@ namespace PAMI\Message\Event;
 use PAMI\Message\Event\EventMessage;
 
 /**
- * Event triggered when an agent logs in.
+ * AgentLogin Event
+ *
+ *
+ * Note: Auto Generated using xsltproc
  *
  * PHP Version 5
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
- * @author     Marcelo Gornstein <marcelog@gmail.com>
- * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
- * @link       http://marcelog.github.com/PAMI/
+ * @author     Diederik de Groot <ddegroot@gmail.com>
+ * @license    http://dkgroot.github.com/PAMI/ Apache License 2.0
+ * @link       http://github.com/dkgroot/PAMI/
  */
-class AgentloginEvent extends EventMessage
+class AgentLoginEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
+     * get Channel
+     *
+     * Returns key: 'Channel'
      *
      * @return string
      */
-    public function getPrivilege()
+    public function getChannel()
     {
-        return $this->getKey('Privilege');
+        return $this->getKey('Channel');
     }
 
     /**
-     * Returns key: 'Agent'.
+     * get ChannelState
+     *
+     * Returns:A numeric code for the channel's current state, related to ChannelStateDesc
+     *
+     * @return string
+     */
+    public function getChannelState()
+    {
+        return $this->getKey('ChannelState');
+    }
+
+    /**
+     * get ChannelStateDesc
+     *
+     * Returns key: 'ChannelStateDesc'
+     *
+     * @return string
+     */
+    public function getChannelStateDesc()
+    {
+        return $this->getKey('ChannelStateDesc');
+    }
+
+    /**
+     * get CallerIDNum
+     *
+     * Returns key: 'CallerIDNum'
+     *
+     * @return string
+     */
+    public function getCallerIDNum()
+    {
+        return $this->getKey('CallerIDNum');
+    }
+
+    /**
+     * get CallerIDName
+     *
+     * Returns key: 'CallerIDName'
+     *
+     * @return string
+     */
+    public function getCallerIDName()
+    {
+        return $this->getKey('CallerIDName');
+    }
+
+    /**
+     * get ConnectedLineNum
+     *
+     * Returns key: 'ConnectedLineNum'
+     *
+     * @return string
+     */
+    public function getConnectedLineNum()
+    {
+        return $this->getKey('ConnectedLineNum');
+    }
+
+    /**
+     * get ConnectedLineName
+     *
+     * Returns key: 'ConnectedLineName'
+     *
+     * @return string
+     */
+    public function getConnectedLineName()
+    {
+        return $this->getKey('ConnectedLineName');
+    }
+
+    /**
+     * get Language
+     *
+     * Returns key: 'Language'
+     *
+     * @return string
+     */
+    public function getLanguage()
+    {
+        return $this->getKey('Language');
+    }
+
+    /**
+     * get AccountCode
+     *
+     * Returns key: 'AccountCode'
+     *
+     * @return string
+     */
+    public function getAccountCode()
+    {
+        return $this->getKey('AccountCode');
+    }
+
+    /**
+     * get Context
+     *
+     * Returns key: 'Context'
+     *
+     * @return string
+     */
+    public function getContext()
+    {
+        return $this->getKey('Context');
+    }
+
+    /**
+     * get Exten
+     *
+     * Returns key: 'Exten'
+     *
+     * @return string
+     */
+    public function getExten()
+    {
+        return $this->getKey('Exten');
+    }
+
+    /**
+     * get Priority
+     *
+     * Returns key: 'Priority'
+     *
+     * @return string
+     */
+    public function getPriority()
+    {
+        return $this->getKey('Priority');
+    }
+
+    /**
+     * get Uniqueid
+     *
+     * Returns key: 'Uniqueid'
+     *
+     * @return string
+     */
+    public function getUniqueid()
+    {
+        return $this->getKey('Uniqueid');
+    }
+
+    /**
+     * get Linkedid
+     *
+     * Returns:Uniqueid of the oldest channel associated with this channel.
+     *
+     * @return string
+     */
+    public function getLinkedid()
+    {
+        return $this->getKey('Linkedid');
+    }
+
+    /**
+     * get Agent
+     *
+     * Returns:Agent ID of the agent.
      *
      * @return string
      */
@@ -66,22 +233,12 @@ class AgentloginEvent extends EventMessage
     }
 
     /**
-     * Returns key: 'UniqueID'.
+     * get Agent Privilege
      *
      * @return string
      */
-    public function getUniqueID()
+    public function getPrivilege()
     {
-        return $this->getKey('UniqueID');
-    }
-
-    /**
-     * Returns key: 'Channel'.
-     *
-     * @return string
-     */
-    public function getChannel()
-    {
-        return $this->getKey('Channel');
+        return $this->getKey('Privilege');
     }
 }

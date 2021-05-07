@@ -144,4 +144,14 @@ class NewchannelEvent extends EventMessage
     {
         return $this->getKey('Exten');
     }
+
+    /**
+     * Returns key: 'LinkedId'.
+     *
+     * @return string
+     */
+    public function getLinkedId()
+    {
+        return $this->getKey('LinkedId');
+    }
 }

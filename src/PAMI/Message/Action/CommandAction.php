@@ -54,5 +54,6 @@ class CommandAction extends ActionMessage
     {
         parent::__construct('Command');
         $this->setKey('Command', $command);
+        $this->setResponseHandler("Command");
     }
 }

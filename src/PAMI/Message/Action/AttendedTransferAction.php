@@ -30,35 +30,68 @@
 namespace PAMI\Message\Action;
 
 /**
- * Atxfer action message.
- *
- * PHP Version 5
- *
- * @category   Pami
- * @package    Message
- * @subpackage Action
- * @author     Marcelo Gornstein <marcelog@gmail.com>
- * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
- * @link       http://marcelog.github.com/PAMI/
+ * AttendedTransfer action message.
+ * using 'Atxfer'
  */
 class AttendedTransferAction extends ActionMessage
 {
-    /**
-     * Constructor.
-     *
-     * @param string $channel   Transferer's channel.
-     * @param string $extension Extension to transfer to.
-     * @param string $context   Context to transfer to.
-     * @param string $priority  Priority to transfer to.
-     *
-     * @return void
-     */
-    public function __construct($channel, $extension, $context, $priority)
+        /**
+         * Constructor.
+         *
+         * @param string $channel
+         *        Transferer's channel.
+         *
+         * @param string $exten
+         *        Extension to transfer to.
+         *
+         * @param string $context
+         *        Context to transfer to.
+         *
+         * @param string $priority
+         *        Priority to transfer to.
+         *
+         * @return void
+         */
+    public function __construct($channel, $exten, $context = null, $priority = null)
     {
         parent::__construct('Atxfer');
         $this->setKey('Channel', $channel);
-        $this->setKey('Exten', $extension);
+        $this->setKey('Exten', $exten);
+
+        if ($context !== null) {
+            trigger_error('Argument $context will be remove at next major version', E_USER_DEPRECATED);
+            $this->setContext($context);
+        }
+
+        if ($priority !== null) {
+            trigger_error('Argument $priority will be remove at next major version', E_USER_DEPRECATED);
+            $this->setPriority($priority);
+        }
+    }
+
+        /**
+         * set Context
+         *
+         * @param string $context
+         *        Context to transfer to.
+         *
+         * @return void
+         */
+    public function setContext($context)
+    {
         $this->setKey('Context', $context);
+    }
+
+        /**
+         * set Priority
+         *
+         * @param string $priority
+         *        Priority to transfer to.
+         *
+         * @return void
+         */
+    public function setPriority($priority)
+    {
         $this->setKey('Priority', $priority);
     }
 }

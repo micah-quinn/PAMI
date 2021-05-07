@@ -1,6 +1,6 @@
 <?php
 /**
- * ConfbridgeList action message.
+ * ConfbridgeListRooms action message.
  *
  * PHP Version 5
  *
@@ -30,14 +30,14 @@
 namespace PAMI\Message\Action;
 
 /**
- * Lists all conference bridge rooms.
+ * ConfbridgeListRooms action message.
  *
  * PHP Version 5
  *
  * @category   Pami
  * @package    Message
  * @subpackage Action
- * @author     Micah Quinn (micah.quinn@sipiq.com)
+ * @author     Matt Styles <mstyleshk@gmail.com>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
@@ -46,7 +46,6 @@ class ConfbridgeListRoomsAction extends ActionMessage
     /**
      * Constructor.
      *
-
      * @return void
      */
     public function __construct()

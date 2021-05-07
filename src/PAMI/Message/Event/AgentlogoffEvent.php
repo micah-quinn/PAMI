@@ -1,6 +1,9 @@
 <?php
 /**
- * Event triggered when an agent logs off.
+ * AgentLogoff Event
+ *
+ *
+ * Note: Auto Generated using xsltproc
  *
  * PHP Version 5
  *
@@ -8,6 +11,7 @@
  * @package    Message
  * @subpackage Event
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Diederik de Groot <ddegroot@gmail.com>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -32,31 +36,26 @@ namespace PAMI\Message\Event;
 use PAMI\Message\Event\EventMessage;
 
 /**
- * Event triggered when an agent logs off.
+ * AgentLogoff Event
+ *
+ *
+ * Note: Auto Generated using xsltproc
  *
  * PHP Version 5
  *
  * @category   Pami
  * @package    Message
  * @subpackage Event
- * @author     Marcelo Gornstein <marcelog@gmail.com>
- * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
- * @link       http://marcelog.github.com/PAMI/
+ * @author     Diederik de Groot <ddegroot@gmail.com>
+ * @license    http://dkgroot.github.com/PAMI/ Apache License 2.0
+ * @link       http://github.com/dkgroot/PAMI/
  */
-class AgentlogoffEvent extends EventMessage
+class AgentLogoffEvent extends EventMessage
 {
     /**
-     * Returns key: 'Privilege'.
+     * get Agent
      *
-     * @return string
-     */
-    public function getPrivilege()
-    {
-        return $this->getKey('Privilege');
-    }
-
-    /**
-     * Returns key: 'Agent'.
+     * Returns:Agent ID of the agent.
      *
      * @return string
      */
@@ -66,22 +65,37 @@ class AgentlogoffEvent extends EventMessage
     }
 
     /**
-     * Returns key: 'UniqueID'.
+     * get Logintime
+     *
+     * Returns:The number of seconds the agent was logged in.
      *
      * @return string
-     */
-    public function getUniqueID()
-    {
-        return $this->getKey('UniqueID');
-    }
-
-    /**
-     * Returns key: 'Logintime'.
-     *
-     * @return integer
      */
     public function getLogintime()
     {
         return $this->getKey('Logintime');
+    }
+
+
+    /**
+     * get Agent Privilege
+     *
+     * @return string
+     */
+    public function getPrivilege()
+    {
+        return $this->getKey('Privilege');
+    }
+
+    /**
+     * get Uniqueid
+     *
+     * Returns key: 'Uniqueid'
+     *
+     * @return string
+     */
+    public function getUniqueid()
+    {
+        return $this->getKey('Uniqueid');
     }
 }

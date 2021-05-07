@@ -1,6 +1,10 @@
 <?php
 /**
- * DAHDIDiallOffhook action message.
+ * DAHDIDialOffhook Action
+ *
+ *
+ *
+ * Note: Auto Generated using xsltproc
  *
  * PHP Version 5
  *
@@ -8,6 +12,7 @@
  * @package    Message
  * @subpackage Action
  * @author     Marcelo Gornstein <marcelog@gmail.com>
+ * @author     Diederik de Groot <ddegroot@gmail.com>
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @version    SVN: $Id$
  * @link       http://marcelog.github.com/PAMI/
@@ -30,28 +35,27 @@
 namespace PAMI\Message\Action;
 
 /**
- * DAHDIDiallOffhook action message.
+ * DAHDIDialOffhook Action
  *
- * PHP Version 5
- *
- * @category   Pami
- * @package    Message
- * @subpackage Action
- * @author     Marcelo Gornstein <marcelog@gmail.com>
- * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
- * @link       http://marcelog.github.com/PAMI/
+ * Note: Auto Generated using xsltproc
  */
-class DAHDIDialOffHookAction extends ActionMessage
+class DAHDIDialOffhookAction extends ActionMessage
 {
     /**
      * Constructor.
      *
+     * @param string $dahdichannel
+     *        DAHDI channel number to dial digits.
+     *
+     * @param string $number
+     *        Digits to dial.
+     *
      * @return void
      */
-    public function __construct($channel, $number)
+    public function __construct($dahdichannel, $number)
     {
         parent::__construct('DAHDIDialOffhook');
-        $this->setKey('DAHDIChannel', $channel);
+        $this->setKey('DAHDIChannel', $dahdichannel);
         $this->setKey('Number', $number);
     }
 }
