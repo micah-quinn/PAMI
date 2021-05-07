@@ -1,9 +1,9 @@
 {
-    "name": "chan-sccp/pami",
+    "name": "micah-quinn/pami",
     "type": "library",
     "description": "Asterisk Manager Interface (AMI) client for PHP, event driven, object oriented (Fork)",
     "keywords": ["asterisk","ami","client","telephony","voip","event","action","manager","monitor", "chan-sccp"],
-    "homepage": "http://github.com/chan-sccp/PAMI",
+    "homepage": "http://github.com/micah-quinn/PAMI",
     "license": "Apache-2.0",
     "authors": [
         {
